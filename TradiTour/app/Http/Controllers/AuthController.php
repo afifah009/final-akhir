@@ -21,14 +21,12 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-                return redirect()->route('home');
-            /*
+
             if ($user->role == 'admin') {
                 return redirect()->route('admin.dashboard');
             } else {
                 return redirect()->route('home');
             }
-            */
         }
 
         return redirect()->back()->withErrors(['email' => 'Invalid credentials']);

@@ -43,9 +43,7 @@
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit" class="btn btn-outline-light me-2">
-                            @if (Auth::user()->role == 'admin')
-                                Logout Admin
-                            @elseif (Auth::user()->role == 'user')
+                            @if (Auth::user()->role == 'user')
                                 Logout User
                             @endif
                         </button>
