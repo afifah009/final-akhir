@@ -8,7 +8,7 @@ class KerajinanKreatif extends Model
 {
     protected $table = 'kerajinan_kreatif';
 
-        protected $primaryKey = 'id_kerajinan_kreatif';
+    protected $primaryKey = 'id_kerajinan_kreatif';
     protected $fillable = ['judul', 'gambar', 'artikel'];
 
     public function ragamBudayas()

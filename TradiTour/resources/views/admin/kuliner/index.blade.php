@@ -1,3 +1,6 @@
+@extends('admin.tampilan.layout')
+
+@section('kontenadmin')
 <div class="container">
     <h1>List Kuliner</h1>
     <a href="{{ route('admin.kuliner.create') }}" class="btn btn-primary mb-3">Tambah Kuliner Baru</a>
@@ -34,5 +37,6 @@
             </tbody>
         </table>
     @endif
-    <a href="{{ route('admin.dashboard') }}">Kembali</a>
+    <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">Kembali</a>
 </div>
+@endsection

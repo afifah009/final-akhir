@@ -26,4 +26,4 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-    <a href="{{ route('admin.senibudaya.index') }}">Kembali</a>
+<a href="{{ route('admin.senibudaya.index') }}">Kembali</a>

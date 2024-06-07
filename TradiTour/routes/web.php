@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminSeniBudayaController;
 use App\Http\Controllers\AdminKulinerController;
 use App\Http\Controllers\AdminKerajinanKreatifController;
 use App\Http\Controllers\AdminGalleryController;
+use App\Http\Controllers\AdminPenginapanController;
 
 Route::group(['prefix' => 'auth'], function () {
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -18,8 +19,8 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/home', function () {
-        return view('home');
+    Route::get('/', function () {
+        return view('tampilan.landingpage');
     })->name('home');
 
     Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function () {
@@ -93,4 +94,13 @@ Route::prefix('admin')->group(function () {
     Route::delete('kerajinankreatif/{id}', [AdminKerajinanKreatifController::class, 'destroy'])->name('admin.kerajinankreatif.destroy');
     Route::get('kerajinankreatif/{id}/edit', [AdminKerajinanKreatifController::class, 'edit'])->name('admin.kerajinankreatif.edit');
     Route::get('kerajinankreatif/{id}', [AdminKerajinanKreatifController::class, 'update'])->name('admin.kerajinankreatif.update');
+
+    Route::resource('penginapan', AdminPenginapanController::class);
+    Route::get('penginapan', [AdminPenginapanController::class, 'index'])->name('admin.penginapan.index');
+    Route::post('penginapan', [AdminPenginapanController::class, 'store'])->name('admin.penginapan.store');
+    Route::get('penginapan/create', [AdminPenginapanController::class, 'create'])->name('admin.penginapan.create');
+    Route::delete('penginapan/{id}', [AdminPenginapanController::class, 'destroy'])->name('admin.penginapan.destroy');
+    Route::get('penginapan/{id}/edit', [AdminPenginapanController::class, 'edit'])->name('admin.penginapan.edit');
+    Route::get('penginapan/{id}', [AdminPenginapanController::class, 'update'])->name('admin.penginapan.update');
+
 });

@@ -1,3 +1,6 @@
+@extends('admin.tampilan.layout')
+
+@section('kontenadmin')
 <div>
     @if(session('success'))
         <div class="alert alert-success">
@@ -23,5 +26,6 @@
             </div>
         @endforeach
     </div>
-        <a href="{{ route('admin.dashboard') }}">GO BACK</a>
+        <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">Kembali</a>
 </div>
+@endsection

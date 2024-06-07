@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Bahari;
 class HomeController extends Controller
 {
     public function index()
@@ -18,8 +18,11 @@ class HomeController extends Controller
 
     public function bahari()
     {
-        return view('RagamBudaya.bahari');
+
+        // $recentBahariArticles = Bahari::latest()->take(6)->get();
+        return view('RagamBudaya.bahari'); // + , compact('recentBahariArticles')
     }
+
 
     public function nonbahari()
     {

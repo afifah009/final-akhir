@@ -1,3 +1,4 @@
+
 <form action="{{ $action }}" method="POST" enctype="multipart/form-data">
     @csrf
     @if ($method == 'PUT')
@@ -27,3 +28,4 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
     <a href="{{ route('admin.nonbahari.index') }}">Kembali</a>
+
