@@ -1,0 +1,898 @@
+.carousel-item img {
+    max-height: 750px; /* Adjust this value as needed */
+    object-fit: cover;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.carousel-caption h1 {
+    color: white;
+    font-weight: bold;
+}
+
+.carousel-caption .btn {
+    background-color: rgba(0, 123, 255, 0.8);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .carousel-caption h1 {
+        font-size: 1.5rem; /* Smaller heading on smaller screens */
+    }
+    .carousel-caption p {
+        font-size: 1rem; /* Smaller paragraph text on smaller screens */
+    }
+    .carousel-item img {
+        max-height: 400px; /* Adjust this value for smaller screens */
+    }
+}
+/* header */
+.navbar {
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+.navbar.scrolled {
+    background-color: rgba(6, 131, 198, 0.5);
+}
+.search-input {
+    display: none;
+    transition: width 0.3s;
+}
+.search-input.show {
+    display: inline-block;
+    width: 200px;
+}
+
+/* end header */
+
+/* hero */
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+.hero-text {
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-img-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-img-container img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Bayangan dengan radius blur 20px */
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero-img-container img:hover {
+    transform: scale(1.05); /* Efek memperbesar saat dihover */
+}
+
+.hero-img-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0) 50%
+    );
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hero-img-container:hover::before {
+    opacity: 1; /* Munculkan overlay saat dihover */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(6, 131, 198, 0.5);
+}
+.hero-content {
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+}
+/* end hero */
+
+/* card */
+.card {
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+.card-cover {
+    background-size: cover;
+    background-position: center;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efek angkat ketika dihover */
+}
+
+.card-icon {
+    font-size: 48px;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.container-background {
+    padding: 20px; /* Berikan padding agar kartu tidak terlalu dekat dengan tepi */
+}
+@media (max-width: 992px) {
+    .col {
+        flex: 0 0 50%; /* Reduce card width to 50% on screens smaller than 992px */
+    }
+}
+
+@media (max-width: 768px) {
+    .col {
+        flex: 0 0 50%; /* Reduce card width to 100% on screens smaller than 768px */
+    }
+}
+/* end card */
+
+/* wisata bahari */
+.carousel-caption h1 {
+    animation: fadeInDown 2s;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* forum */
+.bg-op-6 {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.bg-op-9 {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+}
+.sticky-inner {
+    padding-top: 10px;
+}
+
+/* about */
+.gambar-team {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+.rounded-circle {
+    border-radius: 50%;
+    height: 250px; /* Set the height to match the width */
+    object-fit: cover;
+}
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Set the height of the container */
+}
+
+.side-images-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-image {
+    width: 200px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.title-center {
+    text-align: center;
+}
+
+.container {
+    margin-bottom: 20px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+:root {
+    --white-color: hsl(0, 0%, 100%);
+    --black-color: hsl(0, 0%, 0%);
+    --body-font: "Poppins", sans-serif;
+    --h1-font-size: 1.75rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.813rem;
+    --font-medium: 500;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body,
+input,
+button {
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+}
+
+body {
+    color: var(--white-color);
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.login {
+    position: relative;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+}
+
+.login__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.login__form {
+    position: relative;
+    background-color: hsla(0, 0%, 10%, 0.1);
+    border: 2px solid var(--white-color);
+    margin-inline: 1.5rem;
+    padding: 2.5rem 1.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(8px);
+}
+
+.login__title {
+    text-align: center;
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: 2rem;
+}
+
+.login__content,
+.login__box {
+    display: grid;
+}
+
+.login__content {
+    row-gap: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.login__box {
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    column-gap: 0.75rem;
+    border-bottom: 2px solid var(--white-color);
+}
+
+.login__icon,
+.login__eye {
+    font-size: 1.25rem;
+}
+
+.login__input {
+    width: 100%;
+    padding-block: 0.8rem;
+    background: none;
+    color: var(--white-color);
+    position: relative;
+    z-index: 1;
+}
+
+.login__box-input {
+    position: relative;
+}
+
+.login__label {
+    position: absolute;
+    left: 0;
+    top: 13px;
+    font-weight: var(--font-medium);
+    transition: top 0.3s, font-size 0.3s;
+}
+
+.login__eye {
+    position: absolute;
+    right: 0;
+    top: 18px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.login__box:nth-child(2) input {
+    padding-right: 1.8rem;
+}
+
+.login__check,
+.login__check-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login__check {
+    margin-bottom: 1.5rem;
+}
+
+.login__check-label,
+.login__forgot,
+.login__register {
+    font-size: var(--small-font-size);
+}
+
+.login__check-group {
+    column-gap: 0.5rem;
+}
+
+.login__check-input {
+    width: 16px;
+    height: 16px;
+}
+
+.login__forgot {
+    color: var(--white-color);
+}
+
+.login__forgot:hover {
+    text-decoration: underline;
+}
+
+.login__button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--white-color);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.login__register {
+    text-align: center;
+}
+
+.login__register a {
+    color: var(--white-color);
+    font-weight: var(--font-medium);
+}
+
+.login__register a:hover {
+    text-decoration: underline;
+}
+
+.login__input:focus + .login__label {
+    top: -12px;
+    font-size: var(--small-font-size);
+}
+
+.login__input:not(:placeholder-shown).login__input:not(:focus) + .login__label {
+    top: -12px;
+    font-size: var(--small-font-size);
+}
+
+@media screen and (min-width: 576px) {
+    .login {
+        justify-content: center;
+    }
+
+    .login__form {
+        width: 432px;
+        padding: 4rem 3rem 3.5rem;
+        border-radius: 1.5rem;
+    }
+
+    .login__title {
+        font-size: 2rem;
+    }
+
+    .black-text {
+        color: black;
+    }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f9fa;
+}
+
+.first_col {
+    background-color: white;
+    height: 550px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+    width: 550px;
+    left: 155px;
+    top: 171px;
+    border-radius: 20px;
+}
+
+.img-fluid {
+    border-radius: 20px;
+}
+
+.row-last {
+    width: 60% !important;
+    position: relative !important;
+    left: 350px;
+    top: 50px;
+    height: 200px;
+    padding-bottom: 100px !important;
+    background-color: #c1b688;
+    border-radius: 20px;
+}
+
+.btn-primary {
+    background-color: #c1b688;
+    border: #c1b688;
+}
+
+.btn-primary:hover {
+    background-color: black !important;
+}
+
+.form-controll {
+    height: 52px;
+    background: #fff;
+    font-size: 14px;
+    border-radius: 2px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #c1b688;
+}
+.form-control[type="text"]:focus {
+    border: 2px solid #555;
+}
+@media only screen and (max-width: 600px) {
+    .first_col {
+        position: initial;
+        left: 0 !important;
+    }
+
+    .sec_col {
+        order: 1 !important;
+    }
+
+    .row-last {
+        left: 0 !important;
+        width: 100% !important;
+        height: 500px !important;
+        top: 0 !important;
+    }
+}
+
+/* Profile container */
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("path/to/alam.jpg"); /* Ganti path/to/alam.jpg dengan path yang benar ke gambar Anda */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Jangan lupa menghapus class .login__profile karena tidak akan digunakan lagi sebagai gambar latar belakang */
+
+.profile__form {
+    position: relative;
+    background-color: hsla(0, 0%, 10%, 0.1);
+    border: 2px solid var(--white-color);
+    margin-inline: 1.5rem;
+    padding: 2.5rem 1.5rem;
+    padding-bottom: -50px;
+    border-radius: 1rem;
+    backdrop-filter: blur(8px);
+    text-align: center; /* Center text inside the form */
+}
+
+.login__profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.profile-header {
+    margin-top: 90px;
+}
+
+/* Profile image */
+.profile__img {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Profile name */
+.profile__name {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+/* Profile username */
+.profile__username {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 5px 0;
+}
+
+/* Profile email */
+.profile__email {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Profile info title */
+.profile__info-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Profile bio */
+.profile__bio {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/*penginapan*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+:root {
+    --primary-color: #2c3855;
+    --primary-color-dark: #435681;
+    --text-dark: #333333;
+    --text-light: #767268;
+    --extra-light: #f3f4f6;
+    --white: #ffffff;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section__container {
+    max-width: 100%;
+    margin: auto;
+}
+
+.section__header {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+nav {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.link a {
+    font-weight: 500;
+    color: var(--text-light);
+    transition: 0.3s;
+}
+
+.link a:hover {
+    color: var(--primary-color);
+}
+
+.header__container {
+    padding: 1rem 1rem 5rem 1rem;
+}
+
+.header__image__container {
+    position: relative;
+    min-height: 700px;
+    background-image: linear-gradient(
+            to right,
+            rgba(44, 56, 85, 0.9),
+            rgba(100, 125, 187, 0.1)
+        ),
+        url("{{ asset('image/atas.jpg') }}"); /* Ini bisa dihapus jika menggunakan elemen <img> */
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2rem;
+    overflow: hidden; /* Tambahkan ini untuk memastikan konten tidak tumpang tindih */
+}
+.header__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Untuk memastikan gambar memenuhi kontainer */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Tempatkan gambar di belakang konten lain */
+    border-radius: 2rem; /* Sesuaikan dengan gaya kontainer */
+}
+.header__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    padding: 5rem 2rem;
+    color: #fff; /* Warna teks putih */
+    text-align: center; /* Teks di tengah */
+}
+.header__content h1 {
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    line-height: 4rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.header__content p {
+    color: var(--extra-light);
+}
+
+.popular__grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.popular__card img {
+    width: 100%; /* Memastikan gambar memenuhi lebar kontainer */
+    height: 200px; /* Atur tinggi gambar sesuai kebutuhan */
+    object-fit: cover; /* Memastikan gambar menutupi seluruh area tanpa distorsi */
+    border-radius: 1rem; /* Tambahkan ini jika Anda ingin gambar memiliki sudut membulat */
+}
+
+.popular__card {
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.popular__content {
+    padding: 1rem;
+}
+
+.popular__card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.popular__card__header h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.popular__content p {
+    color: var(--text-light);
+}
+
+@media (width < 900px) {
+    .booking__container form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .popular__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .client__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .footer__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width < 600px) {
+    .nav__links {
+        display: none;
+    }
+
+    .header__container {
+        padding-bottom: 25rem;
+    }
+
+    .booking__container {
+        flex-direction: column;
+        bottom: -25rem;
+    }
+
+    .booking__container form {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .popular__grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .client__grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .footer__container {
+        gap: 2rem;
+    }
+}
+
+/*galeri*/
+.card-img {
+    width: 400px; /* Mengatur lebar gambar */
+    height: 400px; /* Mengatur tinggi gambar */
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    position: relative;
+    padding: 0; /* Menghapus jarak padding */
+}
+
+.card-img:hover img {
+    transform: scale(1.05);
+}
+
+.card-img .caption {
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.279);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-family: system-ui;
+    font-weight: bold;
+    color: white;
+    transition: all 600ms ease-in-out;
+}
+
+.card-img:hover .caption {
+    opacity: 1;
+}
+
+.custom-img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: all 600ms ease-in-out;
+    border-radius: 8px;
+}
+
+.galery {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(300px, 1fr)
+    ); /* Menyesuaikan ukuran dengan gambar */
+    gap: 40px; /* Jarak antar gambar */
+    margin: 0 20px; /* Menambahkan jarak kiri dan kanan */
+    margin-right: 60px;
+    margin-bottom: 10px;
+}
+.gallery-title {
+    text-align: center;
+    font-size: 36px;
+    font-family: system-ui;
+    font-weight: bold;
+    margin: 20px 0; /* Margin top and bottom for spacing */
+}
+
+.card:hover {
+    border: 2px solid rgb(0, 255, 251);
+}
+.popular__card:hover {
+    border: 2px solid rgb(0, 255, 251);
+}

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('tampilan.landingpage');
+// })->name('home');
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/about', [HomeController::class, 'about'])->name('about');
+
+
+Route::get('/bahari', [HomeController::class, 'bahari'])->name('bahari');
+Route::get('/nonbahari', [HomeController::class, 'nonbahari'])->name('nonbahari');
+Route::get('/kuliner', [HomeController::class, 'kuliner'])->name('kuliner');
+Route::get('/senibudaya', [HomeController::class, 'senibudaya'])->name('senibudaya');
+Route::get('/kerajinan', [HomeController::class, 'kerajinan'])->name('kerajinan');
+
+
+Route::get('/forum', [HomeController::class, 'forum'])->name('forum');
+Route::get('/kontak', [HomeController::class, 'kontak'])->name('kontak');
+Route::get('/login', [HomeController::class, 'login'])->name('login');
+Route::get('/register', [HomeController::class, 'register'])->name('register');
+Route::get('/artikel', [HomeController::class, 'artikel'])->name('artikel');
+Route::get('/profile', [HomeController::class, 'profile'])->name('profile');
+
+Route::get('/penginapan', [HomeController::class, 'penginapan'])->name('penginapan');
+Route::get('/galeri', [HomeController::class, 'galeri'])->name('galeri');
