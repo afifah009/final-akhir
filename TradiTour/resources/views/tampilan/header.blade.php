@@ -10,7 +10,6 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a href="{{ route('home') }}" class="nav-link text-white">Home</a></li>
-                <li class="nav-item"><a href="{{ route('about') }}" class="nav-link text-white">About</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" id="ragamBudayaDropdown"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -22,6 +21,17 @@
                         <li><a class="dropdown-item" href="{{ route('kuliner') }}">Kuliner Khas</a></li>
                         <li><a class="dropdown-item" href="{{ route('senibudaya') }}">Seni Budaya</a></li>
                         <li><a class="dropdown-item" href="{{ route('kerajinan') }}">Kerajinan Khas</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="ragamBudayaDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Others
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="ragamBudayaDropdown">
+                        <li><a class="dropdown-item" href="{{ route('about') }}">About</a></li>
+                        <li><a class="dropdown-item" href="{{ route('penginapan') }}">Penginapan</a></li>
+                        <li><a class="dropdown-item" href="{{ route('galeri') }}">Galeri</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="{{ route('forum') }}" class="nav-link text-white">Forum</a></li>
@@ -39,18 +49,22 @@
                 </button>
             </form>
             <div class="text-end">
-                @auth
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-outline-light me-2">
-                            @if (Auth::user()->role == 'user')
-                                Logout User
-                            @endif
-                        </button>
-                    </form>
-                @else
-                    <a href="{{ route('login') }}" class="btn btn-outline-light me-2">Login</a>
-                @endauth
+                <a href="{{ route('login') }}" class="btn btn-outline-light me-2">Login</a>
+            </div>
+
+            
+            <div class="profile-container">
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-decoration-none custom-profile-link dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://i.pinimg.com/736x/bb/b2/b0/bbb2b02e5c96312caf5e42b0661a92f6.jpg" alt="Profile Image" class="rounded-circle me-2 custom-profile-image">
+                        <span class="text-light">Simantompul</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="/profile">Profil</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

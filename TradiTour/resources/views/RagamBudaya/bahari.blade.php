@@ -1,13 +1,10 @@
 @extends('tampilan.index')
+
 @section('konten')
     <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-        </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://cdn.pixabay.com/photo/2024/01/08/15/54/defile-8495836_1280.jpg" class="d-block w-100"
+                <img src="https://cdn.pixabay.com/photo/2015/10/30/20/13/boat-1014711_960_720.jpg" class="d-block w-100"
                     alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h1 class="display-4 fst-italic">Selamat Datang</h1>
@@ -17,212 +14,114 @@
         </div>
     </div>
 
-
-    <div class="album py-5 bg-light">
+    <main class="album py-5 bg-light">
         <div class="container">
-
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" class="stretched-link">Continue reading</a>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" class="stretched-link">Continue reading</a>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" class="stretched-link">Continue reading</a>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" class="stretched-link">Continue reading</a>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" class="stretched-link">Continue reading</a>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" class="stretched-link">Continue reading</a>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" class="stretched-link">Continue reading</a>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <a href="#" class="stretched-link">Continue reading</a>
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg>
-
-                        <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-
-                                </div>
-                                <small class="text-muted">9 mins</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div style="margin-bottom: 50px;">
+                <h1 style="color: rgb(3, 3, 5);">Jelajahi Wisata Alam Sulawesi Utara</h1>
             </div>
+            <section class="row row-cols-1 row-cols-md-4 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://cdn.pixabay.com/photo/2013/11/01/11/13/dolphin-203875_1280.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Tempat Wisata</h5>
+                            <p class="card-text">Deskripsi singkat tentang tempat wisata ini.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">Detail</a>
+                                </div>
+                                <small class="text-muted">Durasi Kunjungan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tulis ulang untuk card-card selanjutnya -->
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://cdn.pixabay.com/photo/2024/01/08/15/54/defile-8495836_1280.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Tempat Wisata</h5>
+                            <p class="card-text">Deskripsi singkat tentang tempat wisata ini.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">Detail</a>
+                                </div>
+                                <small class="text-muted">Durasi Kunjungan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://cdn.pixabay.com/photo/2024/01/08/15/54/defile-8495836_1280.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Tempat Wisata</h5>
+                            <p class="card-text">Deskripsi singkat tentang tempat wisata ini.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">Detail</a>
+                                </div>
+                                <small class="text-muted">Durasi Kunjungan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://cdn.pixabay.com/photo/2024/01/08/15/54/defile-8495836_1280.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Tempat Wisata</h5>
+                            <p class="card-text">Deskripsi singkat tentang tempat wisata ini.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">Detail</a>
+                                </div>
+                                <small class="text-muted">Durasi Kunjungan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://cdn.pixabay.com/photo/2024/01/08/15/54/defile-8495836_1280.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Tempat Wisata</h5>
+                            <p class="card-text">Deskripsi singkat tentang tempat wisata ini.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">Detail</a>
+                                </div>
+                                <small class="text-muted">Durasi Kunjungan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://cdn.pixabay.com/photo/2024/01/08/15/54/defile-8495836_1280.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Tempat Wisata</h5>
+                            <p class="card-text">Deskripsi singkat tentang tempat wisata ini.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary">Detail</a>
+                                </div>
+                                <small class="text-muted">Durasi Kunjungan</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
+    </main>
 @endsection

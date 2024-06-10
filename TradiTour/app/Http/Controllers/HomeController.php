@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Bahari;
+
 class HomeController extends Controller
 {
     public function index()
@@ -18,11 +18,8 @@ class HomeController extends Controller
 
     public function bahari()
     {
-
-        // $recentBahariArticles = Bahari::latest()->take(6)->get();
-        return view('RagamBudaya.bahari'); // + , compact('recentBahariArticles')
+        return view('RagamBudaya.bahari');
     }
-
 
     public function nonbahari()
     {
@@ -52,5 +49,46 @@ class HomeController extends Controller
     public function kontak()
     {
         return view('kontak.index');
+    }
+    public function login()
+    {
+        return view('autentifikasi.login');
+    }
+    public function register()
+    {
+        return view('autentifikasi.register');
+    }
+
+    public function artikel()
+    {
+        return view('RagamBudaya.artikel');
+    }
+
+    public function profile()
+    {
+        return view('profile.index');
+    }
+    public function penginapan()
+    {
+        return view('penginapan.index');
+    }
+    public function galeri()
+    {
+        return view('galeri.index');
+    }
+    public function twit()
+    {
+        return view('forum.form');
+    }
+
+
+    public function admin()
+    {
+        return view('admin.landingpage');
+    }
+
+    public function user()
+    {
+        return view('admin.user.index');
     }
 }

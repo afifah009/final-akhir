@@ -1,23 +1,37 @@
-<footer class="text-white py-5" style="background-color: rgb(1, 30, 57);">
+<footer class="text-white py-5" style="background-color: rgb(34, 47, 72);">
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <h5>Lala wedding organizer</h5>
-                <img src="https://i.pinimg.com/736x/20/4d/29/204d29d4e2480c483ef6a3fec308974d.jpg" alt="Footer Logo"
-                    class="img-fluid " style="width: 100px;">
+                <h5>Kebudayaan & Alam Sulawesi Utara</h5>
+                <img src="{{ asset('image/TRADITOUR.png') }}" alt="Footer Logo" class="img-fluid" style="width: 100px;">
+                <p class="mt-3">Menyajikan keindahan budaya dan alam Sulawesi Utara kepada dunia.</p>
             </div>
             <div class="col-lg-4">
-                <h5>Subscribe for Our Newsletter</h5>
-                <p>Dapatkan informasi seputar diskon dan penawaran lainnya dari layanan favoritemu</p>
-                <p class="mt-3">Your personal details are safe with us.</p>
+                <h5>Berlangganan Newsletter</h5>
+                <p>Dapatkan informasi terbaru mengenai budaya dan alam Sulawesi Utara langsung ke kotak masuk Anda.</p>
+                <form>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Masukkan email Anda">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Berlangganan</button>
+                </form>
+                <p class="mt-3">Data pribadi Anda aman bersama kami.</p>
             </div>
             <div class="col-lg-4">
-                <h5>Contact Information</h5>
-                <p>Gedung Graha Liza, Jl. Asem Baris Raya No.11A, RT.4 RW.3, Kebon Baru, Tebet, South Jakarta City,
-                    Jakarta 12830</p>
-                <p>+6221 2200 8879</p>
-                <p>sanggarliza@gmail.com</p>
-                <p>Senin - Minggu<br>09.30 - 17.00 WIB</p>
+                <h5>Informasi Kontak</h5>
+                <p>Jl. Sam Ratulangi No.123, Manado, Sulawesi Utara 95111</p>
+                <p>+62431 123 4567</p>
+                <p>info@budayasulut.com</p>
+                <p>Senin - Jumat<br>09.00 - 17.00 WITA</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col text-center">
+                <p>&copy; 2024 Kebudayaan & Alam Sulawesi Utara. All rights reserved.</p>
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>
