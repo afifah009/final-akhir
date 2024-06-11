@@ -1,8 +1,13 @@
-@extends('admin.tampilan.layout')
+@extends('admin.index')
+@section('admin.content')
+<div class="container-fluid">
 
-@section('kontenadmin')
-<div class="container">
-    <h1>Tambah Wisata Bahari Baru</h1>
-    @include('admin.bahari.form', ['action' => route('admin.bahari.store'), 'method' => 'POST', 'bahari' => new App\Models\Bahari])
+    <h1 class="h3 mb-2 text-gray-800">Tambah Wisata Bahari Baru</h1>
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            @include('admin.bahari.form', ['action' => route('admin.bahari.store'), 'method' => 'POST', 'bahari' => new App\Models\Bahari])
+        </div>
+    </div>
 </div>
 @endsection

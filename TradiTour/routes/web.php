@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminBahariController;
 use App\Http\Controllers\AdminNonBahariController;
 use App\Http\Controllers\AdminSeniBudayaController;
@@ -18,6 +19,11 @@ Route::group(['prefix' => 'auth'], function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
+// Profile
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile.index');
+Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', function () {
         return view('tampilan.landingpage');
@@ -25,10 +31,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function () {
         Route::get('/dashboard', function () {
-            return view('admin.dashboard');
-        })->name('admin.dashboard');
+            return view('admin.landingpage');
+        })->name('admin.landingpage');
     });
-
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -40,11 +45,18 @@ Route::get('/senibudaya', [HomeController::class, 'senibudaya'])->name('senibuda
 Route::get('/kerajinan', [HomeController::class, 'kerajinan'])->name('kerajinan');
 Route::get('/forum', [HomeController::class, 'forum'])->name('forum');
 Route::get('/kontak', [HomeController::class, 'kontak'])->name('kontak');
-
+Route::get('/artikel', [HomeController::class, 'artikel'])->name('artikel');
+Route::get('/penginapan', [HomeController::class, 'penginapan'])->name('penginapan');
+Route::get('/galeri', [HomeController::class, 'galeri'])->name('galeri');
+Route::get('/twit', [HomeController::class, 'twit'])->name('twit');
 
 // Route Admin Only
 
+
 Route::prefix('admin')->group(function () {
+
+    Route::get('user', [AuthController::class, 'user'])->name('user');
+
     Route::resource('gallery', AdminGalleryController::class);
     Route::get('gallery', [AdminGalleryController::class, 'index'])->name('admin.gallery.index');
     Route::post('gallery', [AdminGalleryController::class, 'store'])->name('admin.gallery.store');

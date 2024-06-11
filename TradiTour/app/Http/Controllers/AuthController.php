@@ -23,7 +23,9 @@ class AuthController extends Controller
             $user = Auth::user();
 
             if ($user->role == 'admin') {
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('admin.landingpage');
+            } if ($user->role == 'user') {
+                return redirect()->route('profile.index');
             } else {
                 return redirect()->route('home');
             }
@@ -66,5 +68,9 @@ class AuthController extends Controller
         Auth::logout();
         return redirect()->route('home');
 
+    }
+        public function user()
+    {
+        return view('admin.user.index');
     }
 }

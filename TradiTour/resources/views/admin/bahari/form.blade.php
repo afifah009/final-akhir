@@ -24,6 +24,8 @@
         <textarea class="form-control" id="artikel" name="artikel" rows="5" required>{{ old('artikel', $bahari->artikel) }}</textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="{{ route('admin.bahari.index') }}" class="btn btn-secondary">Kembali</a>
+    </div>
 </form>
-    <a href="{{ route('admin.bahari.index') }}">Kembali</a>

@@ -11,16 +11,16 @@ class UserSeeder extends Seeder
     {
         User::insert([
             [
-                'username' => 'Chad Toru',
-                'email' => 'chadtoru@gmail.com',
-                'password' => bcrypt('cchhaadd'), 
+                'username' => 'Traditour12',
+                'email' => 'traditour@gmail.com',
+                'password' => bcrypt('traditour'), 
                 'role' => 'admin',
             ],
             [
-                'username' => 'Steven Ardi',
-                'email' => 'stevenardichristanto090103@gmail.com',
-                'password' => bcrypt('09012003'), 
-                'role' => 'user',
+                'username' => 'Traditour69',
+                'email' => 'traditour69@gmail.com',
+                'password' => bcrypt('traditour69'), 
+                'role' => 'admin',
             ],
         ]);
     }

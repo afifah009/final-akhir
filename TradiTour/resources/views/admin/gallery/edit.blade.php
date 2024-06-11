@@ -1,16 +1,14 @@
-@extends('admin.tampilan.layout')
+@extends('admin.index')
+@section('admin.content')
+<div class="container-fluid">
 
-@section('kontenadmin')
-<div>
-    <h2>Edit Image</h2>
-    <form action="{{ route('admin.gallery.update', $image->id) }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
-        <div class="form-group">
-            <label for="image">Image:</label>
-            <input type="file" class="form-control" id="image" name="image">
+    <h1 class="h3 mb-2 text-gray-800">Edit Gambar Gallery</h1>
+    <h1>"{{ $image->keterangan }}"</h1>
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            @include('admin.gallery.form', ['action' => route('admin.gallery.update', $image->id), 'method' => 'PUT', 'gallery' => $image])
         </div>
-        <button type="submit" class="btn btn-primary">Update Image</button>
-    </form>
+    </div>
 </div>
 @endsection
