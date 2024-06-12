@@ -10,103 +10,17 @@
       </div>
   </div>
 </header>
-<div class="gallery-title text-dark">Galeri</div>
-<div class="galery"> 
-     <div class="card-img">
-      <div class="caption">
-        <p>Kota Jakarta</p>
-      </div>
-      <img
-        src="{{ asset('image/alam.jpg') }}"
-        class="custom-img"
-        alt="town"
-      />
-    </div>
-    <div class="card-img">
-        <div class="caption">
-          <p>Kota Jakarta</p>
-        </div>
-        <img
-          src="{{ asset('image/alam.jpg') }}"
-          class="custom-img"
-          alt="town"
-        />
-      </div>
-      <div class="card-img">
-        <div class="caption">
-          <p>Kota Jakarta</p>
-        </div>
-        <img
-          src="{{ asset('image/alam.jpg') }}"
-          class="custom-img"
-          alt="town"
-        />
-      </div>
-      <div class="card-img">
-        <div class="caption">
-          <p>Kota Jakarta</p>
-        </div>
-        <img
-          src="{{ asset('image/alam.jpg') }}"
-          class="custom-img"
-          alt="town"
-        />
-      </div>
-      <div class="card-img">
-        <div class="caption">
-          <p>Kota Jakarta</p>
-        </div>
-        <img
-          src="{{ asset('image/alam.jpg') }}"
-          class="custom-img"
-          alt="town"
-        />
-      </div>
+<div class="gallery-title text-dark">Galeri</div> 
+ <div class="galery"> 
+  @foreach($galeris as $galeri)
     <div class="card-img">
       <div class="caption">
-        <p>Kota Medan</p>
+        <p>{{ $galeri->keterangan }}</p>
       </div>
-      <img src="{{ asset('image/hotel.jpg') }}" class="custom-img" alt="town" />
+      <img src="{{ asset('images/' . $galeri->image) }}" class="custom-img" alt="town" />
     </div>
-    <div class="card-img">
-      <div class="caption">
-        <p>Kota Bandung</p>
-      </div>
-      <img
-        src="{{ asset('image/sembalun.jpg') }}"
-        class="custom-img"
-        alt="town"
-      />
-    </div>
-    <div class="card-img">
-      <div class="caption">
-        <p>Kota Yogyakarta</p>
-      </div>
-      <img
-        src="{{ asset('image/atas.jpg') }}"
-        class="custom-img"
-        alt="town"
-      />
-    </div>
-    <div class="card-img">
-      <div class="caption">
-        <p>Kota Semarang</p>
-      </div>
-      <img
-        src="{{ asset('image/WhatsApp Image 2024-06-05 at 15.39.24.jpeg') }}" class="custom-img"
-        alt="town"
-      />
-    </div>
-    <div class="card-img">
-      <div class="caption">
-        <p>Kota Surabaya</p>
-      </div>
-      <img
-        src="{{ asset('image/flores.jpg') }}"
-        class="custom-img"
-        alt="town"
-      />
-    </div>
-  </div>
+  @endforeach
+</div>
+
 
 @endsection

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bahari;
+use App\Models\Gallery;
+
 class HomeController extends Controller
 {
     public function index()
@@ -18,8 +20,14 @@ class HomeController extends Controller
 
     public function bahari()
     {
-        $recentBahariArticles = Bahari::latest()->take(6)->get();
-        return view('RagamBudaya.bahari', compact('recentBahariArticles'));
+        $baharis = Bahari::all();
+        return view('RagamBudaya.bahari', compact('baharis'));
+    }
+
+    public function showbahari($id)
+    {
+        $bahari = Bahari::findOrFail($id);
+        return view('artikel.bahari', compact('bahari'));
     }
 
 
@@ -43,19 +51,9 @@ class HomeController extends Controller
         return view('RagamBudaya.kerajinan');
     }
 
-    public function forum()
-    {
-        return view('forum.index');
-    }
-
     public function kontak()
     {
         return view('kontak.index');
-    }
-
-        public function artikel()
-    {
-        return view('RagamBudaya.artikel');
     }
 
     public function penginapan()
@@ -64,11 +62,21 @@ class HomeController extends Controller
     }
     public function galeri()
     {
-        return view('galeri.index');
+        $galeris = Gallery::all();
+        return view('galeri.index', compact('galeris'));
     }
+
+    /*
+
+    public function forum()
+    {
+        return view('forum.index');
+    }
+
     public function twit()
     {
         return view('forum.form');
     }
+    */
 
 }

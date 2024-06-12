@@ -34,7 +34,9 @@
                         <li><a class="dropdown-item" href="{{ route('galeri') }}">Galeri</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="{{ route('forum') }}" class="nav-link text-white">Forum</a></li>
+                @auth
+                <li class="nav-item"><a href="{{ route('forum.index') }}" class="nav-link text-white">Forum</a></li>
+                @endauth
                 <li class="nav-item"><a href="{{ route('kontak') }}" class="nav-link text-white">Contact Us</a></li>
             </ul>
             <form class="d-flex"style="padding-right: 15px">
@@ -53,7 +55,11 @@
                     <div class="profile-container">
                         <div class="dropdown">
                             <a href="#" class="d-flex align-items-center text-decoration-none custom-profile-link dropdown-toggle" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="https://i.pinimg.com/736x/bb/b2/b0/bbb2b02e5c96312caf5e42b0661a92f6.jpg" alt="Profile Image" class="rounded-circle me-2 custom-profile-image">
+                                @if(Auth::user()->profile && Auth::user()->profile->profile_image)
+                                    <img src="{{ asset('images/' . Auth::user()->profile->profile_image) }}" alt="Profile Image" class="rounded-circle me-2 custom-profile-image">
+                                @else
+                                    <img src="{{ asset('image/TRADITOUR.png') }}" alt="Default Profile Image" class="rounded-circle me-2 custom-profile-image">
+                                @endif
                                 <span class="text-light">Hello, {{ Auth::user()->username }}</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">

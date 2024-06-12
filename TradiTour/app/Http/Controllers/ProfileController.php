@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Profile;
 
 class ProfileController extends Controller
-
 {
     public function show()
     {
@@ -30,6 +30,12 @@ class ProfileController extends Controller
 
         $user = Auth::user();
         $profile = $user->profile;
+
+        // Create a profile if it doesn't exist
+        if (!$profile) {
+            $profile = new Profile();
+            $profile->user_id = $user->id;
+        }
 
         if ($request->hasFile('profile_image')) {
             $imageName = time().'.'.$request->profile_image->extension();

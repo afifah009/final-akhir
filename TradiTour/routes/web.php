@@ -3,6 +3,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ForumController;
+use App\Http\Controllers\LikeController;
+
 use App\Http\Controllers\AdminBahariController;
 use App\Http\Controllers\AdminNonBahariController;
 use App\Http\Controllers\AdminSeniBudayaController;
@@ -38,19 +41,38 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
+
 Route::get('/bahari', [HomeController::class, 'bahari'])->name('bahari');
+Route::get('/bahari/{id}', [HomeController::class, 'showbahari'])->name('showbahari');
+
 Route::get('/nonbahari', [HomeController::class, 'nonbahari'])->name('nonbahari');
+
+
 Route::get('/kuliner', [HomeController::class, 'kuliner'])->name('kuliner');
+
+
 Route::get('/senibudaya', [HomeController::class, 'senibudaya'])->name('senibudaya');
+
+
 Route::get('/kerajinan', [HomeController::class, 'kerajinan'])->name('kerajinan');
-Route::get('/forum', [HomeController::class, 'forum'])->name('forum');
+
+
 Route::get('/kontak', [HomeController::class, 'kontak'])->name('kontak');
-Route::get('/artikel', [HomeController::class, 'artikel'])->name('artikel');
 Route::get('/penginapan', [HomeController::class, 'penginapan'])->name('penginapan');
 Route::get('/galeri', [HomeController::class, 'galeri'])->name('galeri');
 Route::get('/twit', [HomeController::class, 'twit'])->name('twit');
 
-// Route Admin Only
+
+// Forum routes
+
+Route::get('forum', [ForumController::class, 'index'])->name('forum.index');
+Route::get('forum/create', [ForumController::class, 'create'])->name('forum.create');
+Route::post('forum', [ForumController::class, 'store'])->name('forum.store');
+Route::get('forum/{forum}/edit', [ForumController::class, 'edit'])->name('forum.edit');
+Route::put('forum/{forum}', [ForumController::class, 'update'])->name('forum.update');
+Route::post('/forum/{forum}/like', [LikeController::class, 'like'])->name('forum.like');
+
+// Admin routes
 
 
 Route::prefix('admin')->group(function () {
@@ -114,5 +136,4 @@ Route::prefix('admin')->group(function () {
     Route::delete('penginapan/{id}', [AdminPenginapanController::class, 'destroy'])->name('admin.penginapan.destroy');
     Route::get('penginapan/{id}/edit', [AdminPenginapanController::class, 'edit'])->name('admin.penginapan.edit');
     Route::get('penginapan/{id}', [AdminPenginapanController::class, 'update'])->name('admin.penginapan.update');
-
 });
