@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\CommentController;
 
 use App\Http\Controllers\AdminBahariController;
 use App\Http\Controllers\AdminNonBahariController;
@@ -46,16 +47,16 @@ Route::get('/bahari', [HomeController::class, 'bahari'])->name('bahari');
 Route::get('/bahari/{id}', [HomeController::class, 'showbahari'])->name('showbahari');
 
 Route::get('/nonbahari', [HomeController::class, 'nonbahari'])->name('nonbahari');
-
+Route::get('/nonbahari/{id}', [HomeController::class, 'shownonbahari'])->name('shownonbahari');
 
 Route::get('/kuliner', [HomeController::class, 'kuliner'])->name('kuliner');
-
+Route::get('/kuliner/{id}', [HomeController::class, 'showkuliner'])->name('showkuliner');
 
 Route::get('/senibudaya', [HomeController::class, 'senibudaya'])->name('senibudaya');
-
+Route::get('/senibudaya/{id}', [HomeController::class, 'showsenibudaya'])->name('showsenibudaya');
 
 Route::get('/kerajinan', [HomeController::class, 'kerajinan'])->name('kerajinan');
-
+Route::get('/kerajinan/{id}', [HomeController::class, 'showkerajinan'])->name('showkerajinan');
 
 Route::get('/kontak', [HomeController::class, 'kontak'])->name('kontak');
 Route::get('/penginapan', [HomeController::class, 'penginapan'])->name('penginapan');
@@ -66,12 +67,12 @@ Route::get('/twit', [HomeController::class, 'twit'])->name('twit');
 // Forum routes
 
 Route::get('forum', [ForumController::class, 'index'])->name('forum.index');
-Route::get('forum/create', [ForumController::class, 'create'])->name('forum.create');
+Route::get('forum/create', [ForumController::class, 'create'])->name('forum.create')->middleware('auth');
 Route::post('forum', [ForumController::class, 'store'])->name('forum.store');
 Route::get('forum/{forum}/edit', [ForumController::class, 'edit'])->name('forum.edit');
 Route::put('forum/{forum}', [ForumController::class, 'update'])->name('forum.update');
 Route::post('/forum/{forum}/like', [LikeController::class, 'like'])->name('forum.like');
-
+Route::post('/forums/{forum}/comments', [CommentController::class, 'store'])->name('comments.store');
 // Admin routes
 
 

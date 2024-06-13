@@ -34,9 +34,7 @@
                         <li><a class="dropdown-item" href="{{ route('galeri') }}">Galeri</a></li>
                     </ul>
                 </li>
-                @auth
                 <li class="nav-item"><a href="{{ route('forum.index') }}" class="nav-link text-white">Forum</a></li>
-                @endauth
                 <li class="nav-item"><a href="{{ route('kontak') }}" class="nav-link text-white">Contact Us</a></li>
             </ul>
             <form class="d-flex"style="padding-right: 15px">

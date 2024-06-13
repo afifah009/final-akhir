@@ -30,25 +30,31 @@
     .carousel-caption h1 {
         font-size: 1.5rem;
     }
+
     .carousel-caption p {
         font-size: 1rem;
     }
+
     .carousel-item img {
         max-height: 400px;
     }
 }
+
 /* header */
 .navbar {
     background-color: transparent;
     transition: background-color 0.3s;
 }
+
 .navbar.scrolled {
     background-color: rgba(6, 131, 198, 0.5);
 }
+
 .search-input {
     display: none;
     transition: width 0.3s;
 }
+
 .search-input.show {
     display: inline-block;
     width: 200px;
@@ -65,10 +71,12 @@
     height: 100vh;
     background-color: #f8f9fa;
 }
+
 .hero-text {
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
 .display-4 {
     font-size: 2.5rem;
 }
@@ -100,11 +108,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.1) 0%,
-        rgba(0, 0, 0, 0) 50%
-    );
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0) 50%);
     pointer-events: none;
     z-index: 1;
     opacity: 0;
@@ -123,11 +129,13 @@
     height: 100%;
     background: rgba(6, 131, 198, 0.5);
 }
+
 .hero-content {
     background-color: #fff;
     position: relative;
     z-index: 2;
 }
+
 /* end hero */
 
 /* card */
@@ -144,6 +152,7 @@
     transition: transform 0.3s ease;
     height: 100%;
 }
+
 .card-cover {
     background-size: cover;
     background-position: center;
@@ -163,9 +172,11 @@
     font-size: 24px;
     font-weight: bold;
 }
+
 .container-background {
     padding: 20px;
 }
+
 @media (max-width: 992px) {
     .col {
         flex: 0 0 50%;
@@ -177,6 +188,7 @@
         flex: 0 0 50%;
     }
 }
+
 /* end card */
 
 /* wisata bahari */
@@ -195,6 +207,7 @@
         transform: translateY(0);
     }
 }
+
 /* forum */
 .bg-op-6 {
     background-color: rgba(0, 0, 0, 0.6);
@@ -204,11 +217,13 @@
     font-family: "Roboto", sans-serif;
     font-weight: bold;
 }
+
 .sticky {
     position: -webkit-sticky;
     position: sticky;
     top: 10px;
 }
+
 .sticky-inner {
     padding-top: 10px;
 }
@@ -219,16 +234,19 @@
     height: 250px;
     border-radius: 50%;
 }
+
 .rounded-circle {
     border-radius: 50%;
     height: 250px;
     object-fit: cover;
 }
+
 .image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px; /* Set the height of the container */
+    height: 300px;
+    /* Set the height of the container */
 }
 
 .side-images-container {
@@ -452,12 +470,12 @@ img {
     text-decoration: underline;
 }
 
-.login__input:focus + .login__label {
+.login__input:focus+.login__label {
     top: -12px;
     font-size: var(--small-font-size);
 }
 
-.login__input:not(:placeholder-shown).login__input:not(:focus) + .login__label {
+.login__input:not(:placeholder-shown).login__input:not(:focus)+.login__label {
     top: -12px;
     font-size: var(--small-font-size);
 }
@@ -483,6 +501,7 @@ img {
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
 body {
     font-family: "Poppins", sans-serif;
     background-color: #f8f9fa;
@@ -532,9 +551,11 @@ body {
     box-shadow: none !important;
     border: 1px solid #c1b688;
 }
+
 .form-control[type="text"]:focus {
     border: 2px solid #555;
 }
+
 @media only screen and (max-width: 600px) {
     .first_col {
         position: initial;
@@ -574,6 +595,7 @@ body {
     border-radius: 1rem;
     backdrop-filter: blur(8px);
     text-align: center;
+    padding-top: 10px;
     min-width: 400px;
     max-width: 500px;
 }
@@ -709,18 +731,17 @@ nav {
 .header__image__container {
     position: relative;
     min-height: 700px;
-    background-image: linear-gradient(
-            to right,
-            rgba(44, 56, 85, 0.9),
-            rgba(100, 125, 187, 0.1)
-        ),
-        url("{{ asset('image/atas.jpg') }}");
+    background-image: linear-gradient(to right,
+        rgba(44, 56, 85, 0.9),
+        rgba(100, 125, 187, 0.1)),
+    url("{{ asset('image/atas.jpg') }}");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 2rem;
     overflow: hidden;
 }
+
 .header__img {
     width: 100%;
     height: 100%;
@@ -731,6 +752,7 @@ nav {
     z-index: -1;
     border-radius: 2rem;
 }
+
 .header__content {
     position: absolute;
     top: 50%;
@@ -741,6 +763,7 @@ nav {
     color: #fff;
     text-align: center;
 }
+
 .header__content h1 {
     margin-bottom: 1rem;
     font-size: 3.5rem;
@@ -898,6 +921,7 @@ nav {
     margin-left: 60px;
     margin-bottom: 10px;
 }
+
 .gallery-title {
     text-align: center;
     font-size: 36px;
@@ -909,6 +933,7 @@ nav {
 .card:hover {
     border: 2px solid rgb(0, 255, 251);
 }
+
 .popular__card:hover {
     border: 2px solid rgb(0, 255, 251);
 }
@@ -923,31 +948,37 @@ nav {
     border-radius: 5px;
     background-color: #f9f9f9;
 }
+
 .post-header {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
+
 .post-header img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 10px;
 }
+
 .post-header .username {
     font-weight: bold;
     color: #000;
 }
+
 .post-header .publish-time {
     margin-left: auto;
     color: #888;
 }
+
 .post img {
     max-width: 100%;
     height: auto;
     display: block;
     margin-bottom: 10px;
 }
+
 .post-caption {
     margin-bottom: 10px;
     color: #000;
@@ -958,6 +989,7 @@ nav {
     display: flex;
     align-items: center;
 }
+
 .actions button {
     margin-left: 10px;
     padding: 0;
@@ -965,25 +997,30 @@ nav {
     background-color: transparent;
     cursor: pointer;
 }
+
 .actions button i {
     font-size: 20px;
     color: #007bff;
 }
+
 .actions button.like i {
     color: #dc3545;
 }
+
 .like-comment-count {
     margin-left: 5px;
     margin-right: 20px;
     color: #888;
     font-size: 14px;
 }
+
 .comment-avatar {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     margin-right: 10px;
 }
+
 .comment {
     display: flex;
     padding-top: 10px;
@@ -1114,4 +1151,12 @@ nav {
 
 .custom-dropdown:hover .custom-dropdown-content {
     display: block;
+}
+
+/* gambar pada card ragam budaya */
+.fixed-size-img {
+    width: 100%;
+    height: 200px;
+    /* Atur tinggi sesuai kebutuhan */
+    object-fit: cover;
 }

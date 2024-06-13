@@ -20,16 +20,18 @@
                 <h1 style="color: rgb(3, 3, 5);">Jelajahi Wisata Alam Sulawesi Utara</h1>
             </div>
             <section class="row row-cols-1 row-cols-md-4 g-3">
-                @foreach($baharis as $bahari)
+                @foreach ($baharis as $bahari)
                     <div class="col">
                         <div class="card shadow-sm">
-                            <img src="{{ asset('images/'.$bahari->gambar) }}" class="card-img-top" alt="{{ $bahari->judul }}">
+                            <img src="{{ asset('images/' . $bahari->gambar) }}" class="card-img-top fixed-size-img"
+                                alt="{{ $bahari->judul }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $bahari->judul }}</h5>
                                 <p class="card-text">{{ Str::limit($bahari->artikel, 100) }}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="{{ route('showbahari', $bahari->id_bahari) }}" class="btn btn-sm btn-outline-secondary">Detail</a>
+                                        <a href="{{ route('showbahari', $bahari->id_bahari) }}"
+                                            class="btn btn-sm btn-outline-secondary">Detail</a>
                                     </div>
                                     <small class="text-muted">Durasi Kunjungan</small>
                                 </div>

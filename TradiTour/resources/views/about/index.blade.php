@@ -101,7 +101,7 @@
                                 alt="Nur Afifah Ridwan" />
                         </div>
                         <div class="card-body">
-                            <h5 class="mb-0">Nur Afifah Ridwan</h5>
+                            <h5 class="mb-0">Nur Afifah</h5>
                             <small>Product Manager</small>
                             <div class="d-flex justify-content-center mt-3">
                                 <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>

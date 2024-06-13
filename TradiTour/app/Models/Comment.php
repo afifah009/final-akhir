@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Forum extends Model
+class Comment extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'user_id',
-        'caption_forum',
-        'kategori_forum',
-        'gambar_forum',
+        'forum_id',
+        'comment',
     ];
 
     public function user()
@@ -21,14 +20,8 @@ class Forum extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function likes()
+    public function forum()
     {
-        return $this->hasMany(Like::class);
+        return $this->belongsTo(Forum::class);
     }
-
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
-    }
-
 }

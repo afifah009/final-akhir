@@ -6,22 +6,22 @@
 
     <div class="form-group">
         <label for="judul">Judul</label>
-        <input type="text" class="form-control" id="judul" name="judul" value="{{ old('judul', $senibudaya->judul) }}" required>
+        <input type="text" class="form-control" id="judul" name="judul" value="{{ old('judul', $seniBudaya->judul) }}" required>
     </div>
 
     <div class="form-group">
         <label for="gambar">Gambar</label>
         <input type="file" class="form-control" id="gambar" name="gambar" {{ $method == 'POST' ? 'required' : '' }}>
-        @if ($method == 'PUT' && $senibudaya->gambar)
+        @if ($method == 'PUT' && $seniBudaya->gambar)
             <div>
-                <img src="{{ asset('images/' . $senibudaya->gambar) }}" alt="{{ $senibudaya->judul }}" style="width: 100px;">
+                <img src="{{ asset('images/' . $seniBudaya->gambar) }}" alt="{{ $seniBudaya->judul }}" style="width: 100px;">
             </div>
         @endif
     </div>
 
     <div class="form-group">
         <label for="artikel">Artikel</label>
-        <textarea class="form-control" id="artikel" name="artikel" rows="5" required>{{ old('artikel', $senibudaya->artikel) }}</textarea>
+        <textarea class="form-control" id="artikel" name="artikel" rows="5" required>{{ old('artikel', $seniBudaya->artikel) }}</textarea>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>

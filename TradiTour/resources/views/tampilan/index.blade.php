@@ -117,10 +117,15 @@
             modal.style.display = "none";
         }
 
-        // Fungsi untuk menambahkan komentar baru
-        function addComment() {
-            // Logika untuk menambahkan komentar baru
-        }
+    function sortForums(select) {
+        var selectedOption = select.value;
+        fetch('/sort-forums/' + selectedOption)
+            .then(response => {
+                if (response.ok) {
+                    window.location.reload(); // Reload the page to reflect the new sorting
+                }
+            });
+    }
 
         // Populate comments in modal
         var modalComments = [
