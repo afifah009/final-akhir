@@ -24,6 +24,13 @@
         <textarea class="form-control" id="artikel" name="artikel" rows="5" required>{{ old('artikel', $kuliner->artikel) }}</textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div style="display: flex; justify-content: space-between;">
+
+        <a href="{{ route('admin.kuliner.index') }}" class="btn btn-secondary">Kembali</a>
+    
+
+        <div class="button-container">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
 </form>
-    <a href="{{ route('admin.kuliner.index') }}">Kembali</a>

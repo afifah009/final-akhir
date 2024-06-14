@@ -7,6 +7,7 @@ use App\Http\Controllers\ForumController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\CommentController;
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminBahariController;
 use App\Http\Controllers\AdminNonBahariController;
@@ -16,7 +17,7 @@ use App\Http\Controllers\AdminKerajinanKreatifController;
 use App\Http\Controllers\AdminGalleryController;
 use App\Http\Controllers\AdminPenginapanController;
 use App\Http\Controllers\AdminForumController;
-use App\Mail\ContactFormMail;
+use App\Http\Controllers\AdminCommentController;
 
 Route::group(['prefix' => 'auth'], function () {
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -37,11 +38,10 @@ Route::group(['middleware' => 'auth'], function () {
     })->name('home');
 
     Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function () {
-        Route::get('/dashboard', function () {
-            return view('admin.landingpage');
-        })->name('admin.landingpage');
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.landingpage');
     });
 });
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
@@ -80,7 +80,7 @@ Route::post('forum', [ForumController::class, 'store'])->name('forum.store');
 Route::get('forum/{forum}/edit', [ForumController::class, 'edit'])->name('forum.edit');
 Route::put('forum/{forum}', [ForumController::class, 'update'])->name('forum.update');
 Route::post('/forum/{forum}/like', [LikeController::class, 'like'])->name('forum.like')->middleware('auth');
-Route::post('/forums/{forum}/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::post('/forums/{forum}/comments', [CommentController::class, 'store'])->name('comments.store')->middleware('auth');
 // Admin routes
 
 
@@ -116,29 +116,32 @@ Route::prefix('admin')->group(function () {
     Route::get('senibudaya/create', [AdminSeniBudayaController::class, 'create'])->name('admin.senibudaya.create');
     Route::delete('senibudaya/{id}', [AdminSeniBudayaController::class, 'destroy'])->name('admin.senibudaya.destroy');
     Route::get('senibudaya/{id}/edit', [AdminSeniBudayaController::class, 'edit'])->name('admin.senibudaya.edit');
-    Route::get('senibudaya/{id}', [AdminSeniBudayaController::class, 'update'])->name('admin.senibudaya.update');
+    Route::put('senibudaya/{id}', [AdminSeniBudayaController::class, 'update'])->name('admin.senibudaya.update');
 
     Route::get('kuliner', [AdminKulinerController::class, 'index'])->name('admin.kuliner.index');
     Route::post('kuliner', [AdminKulinerController::class, 'store'])->name('admin.kuliner.store');
     Route::get('kuliner/create', [AdminKulinerController::class, 'create'])->name('admin.kuliner.create');
     Route::delete('kuliner/{id}', [AdminKulinerController::class, 'destroy'])->name('admin.kuliner.destroy');
     Route::get('kuliner/{id}/edit', [AdminKulinerController::class, 'edit'])->name('admin.kuliner.edit');
-    Route::get('kuliner/{id}', [AdminKulinerController::class, 'update'])->name('admin.kuliner.update');
+    Route::put('kuliner/{id}', [AdminKulinerController::class, 'update'])->name('admin.kuliner.update');
    
     Route::get('kerajinankreatif', [AdminKerajinanKreatifController::class, 'index'])->name('admin.kerajinankreatif.index');
     Route::post('kerajinankreatif', [AdminKerajinanKreatifController::class, 'store'])->name('admin.kerajinankreatif.store');
     Route::get('kerajinankreatif/create', [AdminKerajinanKreatifController::class, 'create'])->name('admin.kerajinankreatif.create');
     Route::delete('kerajinankreatif/{id}', [AdminKerajinanKreatifController::class, 'destroy'])->name('admin.kerajinankreatif.destroy');
     Route::get('kerajinankreatif/{id}/edit', [AdminKerajinanKreatifController::class, 'edit'])->name('admin.kerajinankreatif.edit');
-    Route::get('kerajinankreatif/{id}', [AdminKerajinanKreatifController::class, 'update'])->name('admin.kerajinankreatif.update');
+    Route::put('kerajinankreatif/{id}', [AdminKerajinanKreatifController::class, 'update'])->name('admin.kerajinankreatif.update');
 
     Route::get('penginapan', [AdminPenginapanController::class, 'index'])->name('admin.penginapan.index');
     Route::post('penginapan', [AdminPenginapanController::class, 'store'])->name('admin.penginapan.store');
     Route::get('penginapan/create', [AdminPenginapanController::class, 'create'])->name('admin.penginapan.create');
     Route::delete('penginapan/{id}', [AdminPenginapanController::class, 'destroy'])->name('admin.penginapan.destroy');
     Route::get('penginapan/{id}/edit', [AdminPenginapanController::class, 'edit'])->name('admin.penginapan.edit');
-    Route::get('penginapan/{id}', [AdminPenginapanController::class, 'update'])->name('admin.penginapan.update');
+    Route::put('penginapan/{id}', [AdminPenginapanController::class, 'update'])->name('admin.penginapan.update');
 
-    Route::get('forum', [AdminForumController::class, 'index'])->name('admin.forum.index');
-    Route::delete('forum/{id}', [AdminForumController::class, 'destroy'])->name('admin.forum.destroy');
+    Route::get('forums', [AdminForumController::class, 'index'])->name('admin.forum.index');
+    Route::delete('forums/{id}', [AdminForumController::class, 'destroy'])->name('admin.forum.destroy');
+
+    Route::get('comments', [AdminCommentController::class, 'index'])->name('admin.comment.index');
+    Route::delete('comments/{id}', [AdminCommentController::class, 'destroy'])->name('admin.comment.destroy');
 });

@@ -34,6 +34,11 @@
         <input type="number" class="form-control" id="harga_penginapan" name="harga_penginapan" value="{{ old('harga_penginapan', $penginapan->harga_penginapan) }}" required>
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div style="display: flex; justify-content: space-between;">
+        <a href="{{ route('admin.penginapan.index') }}" class="btn btn-secondary">Kembali</a>
+
+        <div class="button-container">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
 </form>
-<a href="{{ route('admin.penginapan.index') }}" class="btn btn-secondary">Kembali</a>

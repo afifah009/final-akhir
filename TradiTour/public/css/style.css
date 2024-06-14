@@ -93,8 +93,8 @@
     width: 100%;
     display: block;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
+    padding-top: 50px;
 }
 
 .hero-img-container img:hover {
@@ -340,13 +340,15 @@ img {
     padding: 2.5rem 1.5rem;
     border-radius: 1rem;
     backdrop-filter: blur(8px);
+    max-width: 600px;
+    max-height: 470px;
 }
 
 .login__title {
     text-align: center;
     font-size: var(--h1-font-size);
     font-weight: var(--font-medium);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .login__content,
@@ -373,7 +375,6 @@ img {
 
 .login__input {
     width: 100%;
-    padding-block: 0.8rem;
     background: none;
     color: var(--white-color);
     position: relative;
@@ -387,7 +388,7 @@ img {
 .login__label {
     position: absolute;
     left: 0;
-    top: 13px;
+    top: 2px;
     font-weight: var(--font-medium);
     transition: top 0.3s, font-size 0.3s;
 }
@@ -476,7 +477,7 @@ img {
 }
 
 .login__input:not(:placeholder-shown).login__input:not(:focus)+.login__label {
-    top: -12px;
+    top: -18px;
     font-size: var(--small-font-size);
 }
 
@@ -590,15 +591,21 @@ body {
     background-color: hsla(0, 0%, 10%, 0.1);
     border: 2px solid var(--white-color);
     margin-inline: 1.5rem;
-    padding: 2.5rem 1.5rem;
-    padding-bottom: -50px;
+    padding: 20px;
+    /* Menggunakan shorthand untuk padding */
     border-radius: 1rem;
     backdrop-filter: blur(8px);
     text-align: center;
-    padding-top: 10px;
-    min-width: 400px;
-    max-width: 500px;
+    width: 350px;
+    /* Mengubah width menjadi fixed */
+    height: auto;
+    /* Mengubah height menjadi auto agar menyesuaikan konten */
+    margin-top: 60px;
+    /* Menambahkan margin top untuk menurunkannya */
+    max-width: 80%;
+    /* Mengubah max-width untuk responsif */
 }
+
 
 .login__profile {
     width: 150px;
@@ -615,42 +622,50 @@ body {
 
 /* Profile image */
 .profile__img {
-    width: 230px;
-    height: 230px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     margin-bottom: 20px;
 }
 
 /* Profile name */
 .profile__name {
-    font-size: 32px;
+    font-size: 16px;
     margin: 10px 0;
 }
 
 /* Profile username */
 .profile__username {
-    font-size: 20px;
+    font-size: 13px;
     color: #ffffff;
     margin: 5px 0;
 }
 
 /* Profile email */
 .profile__email {
-    font-size: 16px;
+    font-size: 13xpx;
     color: #ffffff;
     margin-bottom: 20px;
 }
 
 /* Profile info title */
 .profile__info-title {
-    font-size: 24px;
+    font-size: 13px;
+    color: #aeaeae;
     margin-bottom: 10px;
 }
 
 /* Profile bio */
 .profile__bio {
-    font-size: 16px;
+    font-size: 15px;
     color: #ffffff;
+    max-width: 250px;
+    /* Ubah nilai sesuai kebutuhan Anda */
+    word-wrap: break-word;
+    /* Atau overflow-wrap: break-word; */
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 /*penginapan*/

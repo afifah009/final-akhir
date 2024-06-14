@@ -1,52 +1,107 @@
 @extends('tampilan.index')
+<style>
+    /* Gaya untuk Nama Penginapan */
+    h2.text-primary {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #333;
+        /* Ubah warna teks jika diperlukan */
+    }
+
+    /* Gaya untuk Alamat Penginapan */
+    p.lead {
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    /* Gaya untuk Gambar Penginapan */
+    .img-fluid {
+        width: 100%;
+        max-height: 500px;
+        /* Sesuaikan tinggi maksimum sesuai kebutuhan */
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        /* Efek transisi untuk zoom */
+    }
+
+    .img-fluid:hover {
+        transform: scale(1.1);
+        /* Efek zoom pada hover */
+    }
+
+    /* Gaya untuk Deskripsi Penginapan */
+    p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+    }
+
+    /* Gaya untuk ikon media sosial */
+    .social-icons .btn {
+        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        border-radius: 50%;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-icons .btn img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .overview-divider {
+        border-top: 2px solid black;
+        margin: 20px 0;
+        /* Untuk memberikan ruang di sekitar garis */
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 @section('konten')
-    <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://cdn.pixabay.com/photo/2024/01/08/15/54/defile-8495836_1280.jpg" class="d-block w-100"
-                    alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1 class="display-4 fst-italic">Artikel</h1>
-                    <p class="lead my-3">Wisata Bahari Sulawesi Utara</p>
+<header class="section__container header__container">
+  <div class="header__image__container">
+      <img src="{{ asset('image/hotel.jpg') }}" alt="Header Image" class="header__img">
+      <div class="header__content">
+          <h1>Nikmati Liburan Impian Anda</h1>
+          <p>Pilihlah Hotel Terdekat dari Tempat Wisata Anda</p>
+      </div>
+  </div>
+</header>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-primary">{{ $penginapan->nama_penginapan }}</h2>
+                <p class="lead mb-4">{{ $penginapan->alamat_penginapan }}</p>
+                <div class="img-zoom-container mb-4">
+                    <img src="{{ asset('images/' . $penginapan->gambar_penginapan) }}"
+                        alt="{{ $penginapan->nama_penginapan }}" class="img-fluid rounded">
                 </div>
-            </div>
-        </div>
-    </div>
+                <hr class="overview-divider">
+                <p style="font-size: 1.5rem; color: black; font-weight: bold;">overview</p>
+                <p style="color: black">{{ $penginapan->deskripsi_penginapan }}</p>
+                <p style="color: black"><strong>Harga: RP/malam {{ $penginapan->harga_penginapan }} </strong></p>
+                <!-- Social Media Icons -->
+                <div class="social-icons mt-4">
+                    <a href="https://facebook.com" class="btn btn-social-icon btn-facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com" class="btn btn-social-icon btn-twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com" class="btn btn-social-icon btn-instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
 
-    <div class="row featurette " style="text-align: justify; margin:0px 50px 50px 50px"
-        style="margin-top: 80px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); padding: 20px;">
-        <div class="col-md-7">
-            <h2 class="featurette-heading" style="color: rgb(213, 147, 3);">
-                {{ $penginapan->nama_penginapan }}
-            </h2>
-            <p class="lead" style="color: black">
-                {{ $penginapan->deskripsi_penginapan }}
-            </p>
-            <p class="lead" style="color: black">
-                Alamat: {{ $penginapan->alamat_penginapan }}
-            </p>
-            <p class="lead" style="color: black">
-                <strong>
-                    Harga: {{ $penginapan->harga_penginapan }} IDR / malam
-                </strong>
-            </p>
-            <div style="margin-top: 20px;">
-                <a href="https://facebook.com" class="btn btn-social-icon btn-facebook"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com" class="btn btn-social-icon btn-twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com" class="btn btn-social-icon btn-instagram"><i
-                        class="fab fa-instagram"></i></a>
             </div>
-        </div>
-        <div class="col-md-5">
-            <img src="{{ asset('images/'.$penginapan->gambar_penginapan) }}" alt="{{ $penginapan->nama_penginapan }}"
-                class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="1000"
-                height="500" alt="Tim Kami">
         </div>
     </div>
 @endsection

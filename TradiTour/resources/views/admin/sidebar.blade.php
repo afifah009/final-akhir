@@ -61,7 +61,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Forums</h6>
                 <a class="collapse-item" href="{{ route('admin.forum.index') }}">Forum</a>
-                <a class="collapse-item" href="cards.html">Comment</a>
+                <a class="collapse-item" href="{{ route('admin.comment.index') }}">Comment</a>
             </div>
         </div>
     </li>

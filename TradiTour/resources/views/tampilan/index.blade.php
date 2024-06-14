@@ -105,17 +105,26 @@
             });
         });
 
-        // Fungsi untuk menampilkan modal
-        function toggleCommentsModal() {
-            var modal = document.getElementById("commentsModal");
-            modal.style.display = "block";
-        }
+    function toggleCommentsModal(button) {
+        var forumId = button.getAttribute('data-forum-id');
+        var modal = document.getElementById('commentsModal' + forumId);
+        modal.style.display = "block";
+    }
 
-        // Fungsi untuk menutup modal
-        function closeCommentsModal() {
-            var modal = document.getElementById("commentsModal");
-            modal.style.display = "none";
+    function closeCommentsModal(forumId) {
+        var modal = document.getElementById('commentsModal' + forumId);
+        modal.style.display = "none";
+    }
+
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+        var modals = document.getElementsByClassName('modal');
+        for (var i = 0; i < modals.length; i++) {
+            if (event.target == modals[i]) {
+                modals[i].style.display = "none";
+            }
         }
+    }
 
     function sortForums(select) {
         var selectedOption = select.value;

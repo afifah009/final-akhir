@@ -19,8 +19,11 @@
         @endif
     </div>
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Upload Gambar</button>
+    <div style="display: flex; justify-content: space-between;">
         <a href="{{ route('admin.gallery.index') }}" class="btn btn-secondary">Kembali</a>
+    
+        <div class="button-container">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
     </div>
 </form>
