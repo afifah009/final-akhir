@@ -10,31 +10,26 @@ class ForumController extends Controller
 {
 public function index(Request $request)
 {
-    // Get the selected sorting option from the request
+
     $sortBy = $request->get('sort_by');
 
-    // Default sort by latest if no option selected
     $sortBy = $sortBy ?? 'latest';
 
-    // Get the selected category filter from the request
+
     $category = $request->get('category');
 
-    // Define the sorting options
     $sortOptions = [
         'latest' => 'created_at',
         'likes' => 'likes_count',
         'comments' => 'comments_count',
     ];
 
-    // Validate the selected sort option
     if (!array_key_exists($sortBy, $sortOptions)) {
         abort(400, 'Invalid sort_by option.');
     }
 
-    // Get the currently authenticated user
     $user = auth()->user();
 
-    // Query forums based on the selected sorting option and category filter
     $forums = Forum::withCount(['likes', 'comments'])
         ->when($category === 'My Posts', function ($query) use ($user) {
             return $query->where('user_id', $user->id);

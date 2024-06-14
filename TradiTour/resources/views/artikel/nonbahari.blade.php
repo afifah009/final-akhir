@@ -27,9 +27,6 @@
             <p class="lead" style="color: black">
                 {{ $nonBahari->artikel }}
             </p>
-            <div>
-                <button class="btn btn-primary" id="like-button"><i class="fas fa-thumbs-up"></i> Like</button>
-            </div>
             <div style="margin-top: 20px;">
                 <a href="https://facebook.com" class="btn btn-social-icon btn-facebook"><i
                         class="fab fa-facebook-f"></i></a>

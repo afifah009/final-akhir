@@ -60,14 +60,14 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Forums</h6>
-                <a class="collapse-item" href="buttons.html">Forum</a>
+                <a class="collapse-item" href="{{ route('admin.forum.index') }}">Forum</a>
                 <a class="collapse-item" href="cards.html">Comment</a>
             </div>
         </div>
     </li>
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="{{ route('user') }}">
+        <a class="nav-link" href="{{ route('user.index') }}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>User</span></a>
     </li>

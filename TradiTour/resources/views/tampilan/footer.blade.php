@@ -21,7 +21,7 @@
                 <h5>Informasi Kontak</h5>
                 <p>Jl. Sam Ratulangi No.123, Manado, Sulawesi Utara 95111</p>
                 <p>+62431 123 4567</p>
-                <p>info@budayasulut.com</p>
+                <a href="mailto:TradiTour@outlook.com" style="color: white;"><p>TradiTour@outlook.com</p></a>
                 <p>Senin - Jumat<br>09.00 - 17.00 WITA</p>
             </div>
         </div>

@@ -1,6 +1,7 @@
 @extends('tampilan.index')
 
 @section('konten')
+
     <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -19,6 +20,15 @@
             <div style="margin-bottom: 50px;">
                 <h1 style="color: rgb(3, 3, 5);">Jelajahi Wisata Alam Sulawesi Utara</h1>
             </div>
+
+            <!-- Search Form -->
+            <form action="{{ route('bahari') }}" method="GET" class="mb-4">
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="Cari..." value="{{ request()->query('search') }}">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </form>
+
             <section class="row row-cols-1 row-cols-md-4 g-3">
                 @foreach ($baharis as $bahari)
                     <div class="col">
@@ -40,6 +50,10 @@
                     </div>
                 @endforeach
             </section>
-        </div>
+
+            <!--pagination-->
+            <div class="d-flex justify-content-center mt-4">
+                {{ $baharis->appends(['search' => request()->query('search')])->links('pagination::bootstrap-4') }}
+            </div>
     </main>
 @endsection

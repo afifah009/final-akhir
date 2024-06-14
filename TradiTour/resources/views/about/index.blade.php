@@ -4,45 +4,6 @@
         <img src="{{ asset('image/Travel Blogger LinkedIn Banner .png') }}" alt="Logo">
     </div>
 
-    {{-- <div class="container-xxl py-5" style="background-color: #ffffff; margin-top: 30px; border-radius:8px">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="row g-3">
-                        <div class="col-6 text-start">
-                            <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s"
-                                src="{{ asset('image/atas.jpg') }}" />
-                        </div>
-                        <div class="col-6 text-start">
-                            <img class="img-fluid rounded w-100 wow zoomIn pt-5" data-wow-delay="0.3s"
-                                src="{{ asset('image/gunung.jpg') }}" style="margin-top: 25%" />
-                        </div>
-                        <div class="col-6 text-end">
-                            <img class="img-fluid rounded w-100 wow zoomIn pt-5" data-wow-delay="0.5s"
-                                src="{{ asset('image/sembalun.jpg') }}" />
-                        </div>
-                        <div class="col-6 text-end">
-                            <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.5s"
-                                src="{{ asset('image/flores.jpg') }}" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h5 class="section-title ff-secondary text-start fw-normal mb-4" style="color: black;">Tentang Kami</h5>
-                    <h1 class="mb-4"
-                        style="color: rgb(0, 0, 0); border-bottom: 5px solid rgb(249, 216, 50); margin-bottom: 20px;">
-                        Selamat Datang di Traditour</h1>
-                    <p class="mb-4" style="color: black;">
-                        TradiTour adalah portal eksplorasi yang membimbing Anda menemukan tempat-tempat wisata yang
-                        menakjubkan. Kami menyediakan informasi terkini dan komprehensif untuk merencanakan perjalanan Anda.
-                        Dengan bantuan kami, Anda dapat menjelajahi keindahan alam yang unik, melihat keanekaragaman hayati
-                        yang menakjubkan, dan merasakan kekayaan budaya yang mempesona. Ayo bergabung dengan TradiTour dan
-                        temukan petualangan baru bersama kami!
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div> --}}
     <div class="container-xxl py-5 animate_animated animate_fadeInUp"
     style="background-color: #ffffff; margin-top: 30px; border-radius:8px">
     <div class="container">

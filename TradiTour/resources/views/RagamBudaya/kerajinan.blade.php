@@ -19,17 +19,28 @@
             <div style="margin-bottom: 50px;">
                 <h1 style="color: rgb(3, 3, 5);">Jelajahi Kerajinan Sulawesi Utara</h1>
             </div>
+
+            <!-- Search Form -->
+            <form action="{{ route('kerajinan') }}" method="GET" class="mb-4">
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="Cari..." value="{{ request()->query('search') }}">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </form>
+
             <section class="row row-cols-1 row-cols-md-4 g-3">
-                @foreach($kerajinans as $kerajinan)
+                @foreach ($kerajinans as $kerajinan)
                     <div class="col">
                         <div class="card shadow-sm">
-                            <img src="{{ asset('images/'.$kerajinan->gambar) }}" class="card-img-top fixed-size-img" alt="{{ $kerajinan->judul }}">
+                            <img src="{{ asset('images/' . $kerajinan->gambar) }}" class="card-img-top fixed-size-img"
+                                alt="{{ $kerajinan->judul }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $kerajinan->judul }}</h5>
                                 <p class="card-text">{{ Str::limit($kerajinan->artikel, 100) }}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="{{ route('showkerajinan', $kerajinan->id_kerajinan_kreatif) }}" class="btn btn-sm btn-outline-secondary">Detail</a>
+                                        <a href="{{ route('showkerajinan', $kerajinan->id_kerajinan_kreatif) }}"
+                                            class="btn btn-sm btn-outline-secondary">Detail</a>
                                     </div>
                                     <small class="text-muted">Durasi Kunjungan</small>
                                 </div>
@@ -38,6 +49,11 @@
                     </div>
                 @endforeach
             </section>
+
+            <!-- Pagination Links -->
+            <div class="d-flex justify-content-center mt-4">
+                {{ $kerajinans->appends(['search' => request()->query('search')])->links('pagination::bootstrap-4') }}
+            </div>
         </div>
     </main>
 @endsection

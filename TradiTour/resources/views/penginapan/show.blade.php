@@ -22,10 +22,18 @@
         style="margin-top: 80px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); padding: 20px;">
         <div class="col-md-7">
             <h2 class="featurette-heading" style="color: rgb(213, 147, 3);">
-                {{ $senibudaya->judul }}
+                {{ $penginapan->nama_penginapan }}
             </h2>
             <p class="lead" style="color: black">
-                {{ $senibudaya->artikel }}
+                {{ $penginapan->deskripsi_penginapan }}
+            </p>
+            <p class="lead" style="color: black">
+                Alamat: {{ $penginapan->alamat_penginapan }}
+            </p>
+            <p class="lead" style="color: black">
+                <strong>
+                    Harga: {{ $penginapan->harga_penginapan }} IDR / malam
+                </strong>
             </p>
             <div style="margin-top: 20px;">
                 <a href="https://facebook.com" class="btn btn-social-icon btn-facebook"><i
@@ -36,7 +44,7 @@
             </div>
         </div>
         <div class="col-md-5">
-            <img src="{{ asset('images/'.$senibudaya->gambar) }}" alt="{{ $senibudaya->judul }}"
+            <img src="{{ asset('images/'.$penginapan->gambar_penginapan) }}" alt="{{ $penginapan->nama_penginapan }}"
                 class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="1000"
                 height="500" alt="Tim Kami">
         </div>

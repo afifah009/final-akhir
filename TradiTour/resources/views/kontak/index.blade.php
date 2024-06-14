@@ -24,23 +24,27 @@
 
             <div class="col-md-6 first_col">
                 <h1 class="text-center mt-3">Contact Us</h1>
-                <form class="p-4 mt-5">
+                <form method="POST" action="{{ route('kontak.send') }}">
+                    @csrf
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="name">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="email">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Enter your massage</label>
-                        <textarea type="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label for="exampleFormControlTextarea1" class="form-label">Enter your message</label>
+                        <textarea type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
                     </div>
                     <div class="mb-3">
                         <button class="btn btn-primary">Send Now</button>
                     </div>
                 </form>
+                @if(session('message'))
+                    <div class="alert alert-success">{{ session('message') }}</div>
+                @endif
             </div>
             <div class="col-md-6 sec_col">
                 <img src="{{ asset('image/flores.jpg') }}" class="img-fluid">

@@ -33,7 +33,7 @@
                         <img src="{{ asset($forum->gambar_forum) }}" alt="Forum Image" style="margin-top: 10px; max-width: 100%; height: auto;">
                     @endif
                 </div>
-                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn btn-primary" style="margin-top:15px">Update</button>
             </form>
         </div>
     </div>

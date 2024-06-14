@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label for="kategori_forum">Category</label>
-                    <select name="kategori_forum" class="form-control" required>
+                    <select name="kategori_forum" id="category-select" class="form-control" required>
                         <option value="bahari">Bahari</option>
                         <option value="non bahari">Non Bahari</option>
                         <option value="seni budaya">Seni Budaya</option>
@@ -36,15 +36,17 @@
                 </div>
                 <div class="form-group">
                     <label for="gambar_forum">Image</label>
-                    <input type="file" name="gambar_forum" class="form-control" required>
+                    <input type="file" name="gambar_forum" id="custom-tweet-image" class="form-control" required
+                        onchange="previewImage()">
+                    <div id="custom-image-preview" style="margin-top: 10px;"></div>
                 </div>
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary" style="margin-top:15px">Create</button>
             </form>
         </div>
     </div>
 
     <script>
-        // JavaScript for image preview and character count
+        // JavaScript for image preview
         function previewImage() {
             const file = document.getElementById('custom-tweet-image').files[0];
             const reader = new FileReader();
@@ -59,7 +61,7 @@
             }
         }
 
-        document.getElementById('custom-tweet-text').addEventListener('input', function() {
+        document.getElementById('caption_forum').addEventListener('input', function() {
             const charCount = 140 - this.value.length;
             document.querySelector('.custom-char-count').textContent = charCount;
         });

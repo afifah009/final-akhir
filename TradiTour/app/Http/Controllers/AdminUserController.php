@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Forum;
+use App\Models\User;
 
-class AdminForumController extends Controller
+class AdminUserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $forums = Forum::all();
-        return view('admin.forum.index', compact('forums'));
+        $users = User::where('role', 'user')->get();
+        return view('admin.user.index', compact('users'));
     }
 
     /**
@@ -61,8 +61,8 @@ class AdminForumController extends Controller
      */
     public function destroy($id)
     {
-        $forum = Forum::find($id);
-        $forum->delete();
-        return redirect()->route('admin.forum.index');
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('user.index');
     }
 }
