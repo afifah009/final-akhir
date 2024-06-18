@@ -108,9 +108,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.1) 0%,
-            rgba(0, 0, 0, 0) 50%);
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0) 50%
+    );
     pointer-events: none;
     z-index: 1;
     opacity: 0;
@@ -358,7 +360,7 @@ img {
 
 .login__content {
     row-gap: 1.75rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .login__box {
@@ -450,6 +452,35 @@ img {
     transition: background-color 0.3s, color 0.3s;
     /* Add transition for smooth effect */
 }
+.login_update {
+    width: 100%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 0.5rem;
+    background-color: var(--white-color);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: -15px;
+    /* Add transition for smooth effect */
+}
+
+.login_update:hover {
+    background-color: var(
+        --primary-color
+    ); /* Ganti dengan warna yang diinginkan */
+    color: var(--white-color); /* Ganti dengan warna yang diinginkan */
+}
+
+.login_update:hover {
+    background-color: var(--primary-color);
+    /* Change to the desired hover background color */
+    color: var(--white-color);
+    /* Change to the desired hover text color */
+}
 
 .login__button:hover {
     background-color: var(--primary-color);
@@ -471,12 +502,12 @@ img {
     text-decoration: underline;
 }
 
-.login__input:focus+.login__label {
+.login__input:focus + .login__label {
     top: -12px;
     font-size: var(--small-font-size);
 }
 
-.login__input:not(:placeholder-shown).login__input:not(:focus)+.login__label {
+.login__input:not(:placeholder-shown).login__input:not(:focus) + .login__label {
     top: -18px;
     font-size: var(--small-font-size);
 }
@@ -606,7 +637,6 @@ body {
     /* Mengubah max-width untuk responsif */
 }
 
-
 .login__profile {
     width: 150px;
     height: 150px;
@@ -665,7 +695,6 @@ body {
     /* Atau overflow-wrap: break-word; */
     margin-left: auto;
     margin-right: auto;
-
 }
 
 /*penginapan*/
@@ -746,10 +775,12 @@ nav {
 .header__image__container {
     position: relative;
     min-height: 700px;
-    background-image: linear-gradient(to right,
-        rgba(44, 56, 85, 0.9),
-        rgba(100, 125, 187, 0.1)),
-    url("{{ asset('image/atas.jpg') }}");
+    background-image: linear-gradient(
+            to right,
+            rgba(44, 56, 85, 0.9),
+            rgba(100, 125, 187, 0.1)
+        ),
+        url("{{ asset('image/atas.jpg') }}");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1175,3 +1206,4 @@ nav {
     /* Atur tinggi sesuai kebutuhan */
     object-fit: cover;
 }
+

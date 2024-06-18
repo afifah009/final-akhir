@@ -4,8 +4,7 @@
     <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://cdn.pixabay.com/photo/2013/10/13/15/27/castle-195105_640.jpg" class="d-block w-100"
-                    alt="...">
+                <img src="{{ asset('image/sulawesi utara.png') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h1 class="display-4 fst-italic">Selamat Datang</h1>
                     <p class="lead my-3">Wisata Non Bahari Sulawesi Utara</p>
@@ -23,7 +22,8 @@
             <!-- Search Form -->
             <form action="{{ route('nonbahari') }}" method="GET" class="mb-4">
                 <div class="input-group">
-                    <input type="text" name="search" class="form-control" placeholder="Cari..." value="{{ request()->query('search') }}">
+                    <input type="text" name="search" class="form-control" placeholder="Cari..."
+                        value="{{ request()->query('search') }}">
                     <button class="btn btn-primary" type="submit">Search</button>
                 </div>
             </form>

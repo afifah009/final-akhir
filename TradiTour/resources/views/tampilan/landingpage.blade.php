@@ -1,4 +1,36 @@
 @extends('tampilan.index')
+    <style>
+    /* Definisi animasi */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mengatur animasi pada elemen dengan class .card */
+.card {
+    opacity: 0; /* Set awal opacity menjadi 0 */
+    animation: fadeInUp 4s forwards; /* Menggunakan animasi fadeInUp selama 1 detik */
+}
+
+/* Tambahan animasi delay untuk tiap .card berdasarkan urutan */
+.card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+</style>
 @section('konten')
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -9,35 +41,47 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://cdn.pixabay.com/photo/2019/06/12/21/10/ocean-4270251_1280.jpg" class="d-block w-100"
-                    alt="First slide">
+                <img src="{{ asset('image/foto4.jpeg') }}" class="d-block w-100" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption text-start">
-                        <h1>Example headline.</h1>
-                        <p>Some representative placeholder content for the first slide of the carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="{{ route('register') }}">Sign up today</a></p>
+                        <h1>Temukan Keindahan Sulawesi Utara!</h1>
+                        <p>Selami pesona alam dan keanekaragaman budaya Sulawesi Utara. Dari pantai-pantai eksotis hingga
+                            pegunungan yang memukau, setiap sudutnya menanti untuk kamu jelajahi.</p>
+                        <p><a class="btn btn-lg btn-primary" href="{{ route('register') }}">Daftar Sekarang</a></p>
                     </div>
+
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://cdn.pixabay.com/photo/2021/08/28/14/46/lighthouse-6581129_1280.jpg" class="d-block w-100"
-                    alt="Second slide">
+                <img src="{{ asset('image/sulawesi.jpg') }}" class="d-block w-100" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>Another example headline.</h1>
-                        <p>Some representative placeholder content for the second slide of the carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                        <h1>Jelajahi Keajaiban Bahari Sulawesi Utara!</h1>
+                        <p>
+                            Temukan dunia bawah laut yang memukau dengan terumbu karang yang indah dan kehidupan laut yang
+                            menakjubkan.
+                            Mari berpetualang di surga bahari yang belum terjamah.
+                        </p>
+                        <p>
+                            <a class="btn btn-lg btn-primary" href="{{ route('bahari') }}">Pelajari Lebih Lanjut</a>
+                        </p>
                     </div>
+
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://cdn.pixabay.com/photo/2023/06/21/16/26/warnemunde-8079731_1280.jpg" class="d-block w-100"
-                    alt="Third slide">
+                <img src="{{ asset('image/gambar.jpg') }}" class="d-block w-100" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption text-end">
-                        <h1>One more for good measure.</h1>
-                        <p>Some representative placeholder content for the third slide of this carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                        <h1>Abadikan Momen di Sulawesi Utara</h1>
+                        <p>
+                            Lihat koleksi foto yang menakjubkan dari perjalanan kami di Sulawesi Utara. Setiap gambar
+                            menceritakan
+                            keindahan dan pesona yang menanti untuk dijelajahi.
+                        </p>
+                        <p>
+                            <a class="btn btn-lg btn-primary" href="{{ route('galeri') }}">Lihat Galeri</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -54,7 +98,7 @@
 
     {{-- end halaman besar --}}
     {{-- card uji coba --}}
-    <div class="container container-background">
+    {{-- <div class="container container-background">
         <div class="row">
             <div class="col-sm-4 mb-3 mb-sm-0">
                 <div class="card p-3">
@@ -64,8 +108,13 @@
                             <path
                                 d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
                         </svg>
-                        <h5 class="card-title mt-2 ">Destinasi</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title mt-2">Destinasi</h5>
+                        <p class="card-text">
+                            Temukan keajaiban tersembunyi dengan TradiTour! Jelajahi destinasi menakjubkan yang kaya akan
+                            sejarah, budaya,
+                            dan keindahan alam. Setiap perjalanan membawa Anda lebih dekat ke pesona lokal dan pengalaman
+                            tak terlupakan.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -78,7 +127,14 @@
                                 d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5m2 .5a.5.5 0 0 1 .5.5V13h8V9.5a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a.5.5 0 0 1 .5-.5" />
                         </svg>
                         <h5 class="card-title mt-2">Pemasaran</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text">
+                            Kami TradiTour berkomitmen untuk mendukung pertumbuhan ekonomi di Sulawesi Utara dengan
+                            strategi pemasaran
+                            yang efektif.
+                            Kami membantu Anda untuk menjangkau lebih banyak pelanggan, meningkatkan penjualan, dan
+                            memperkuat kehadiran merek
+                            Anda di pasar lokal maupun regional.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -90,12 +146,72 @@
                             <path
                                 d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5m2 .5a.5.5 0 0 1 .5.5V13h8V9.5a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a.5.5 0 0 1 .5-.5" />
                         </svg>
-                        <h5 class="card-title mt-2">Ekonomi kreatif</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title mt-2">Ekonomi Kreatif</h5>
+                        <p class="card-text">
+                            Memanfaatkan kreativitas untuk mendorong pertumbuhan ekonomi dan inovasi. Dari produk unik
+                            hingga layanan
+                            berbasis budaya, mari bersama mengembangkan potensi ekonomi lokal dengan ide-ide yang segar dan
+                            berani.
+                        </p>
                     </div>
                 </div>
             </div>
 
+        </div>
+    </div> --}}
+    <div class="container container-background">
+        <div class="row">
+            <div class="col-sm-4 mb-3 mb-sm-0">
+                <div class="card p-3">
+                    <div class="card-body text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="orange"
+                            class="bi bi-people-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                        </svg>
+                        <h5 class="card-title mt-2">Destinasi</h5>
+                        <p class="card-text">
+                            Temukan keajaiban tersembunyi dengan TradiTour! Jelajahi destinasi menakjubkan yang kaya akan
+                            sejarah, budaya, dan keindahan alam. Setiap perjalanan membawa Anda lebih dekat ke pesona lokal
+                            dan pengalaman tak terlupakan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 mb-3 mb-sm-0">
+                <div class="card p-3">
+                    <div class="card-body text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="orange"
+                            class="bi bi-shop-window" viewBox="0 0 16 16">
+                            <path
+                                d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5m2 .5a.5.5 0 0 1 .5.5V13h8V9.5a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a.5.5 0 0 1 .5-.5" />
+                        </svg>
+                        <h5 class="card-title mt-2">Pemasaran</h5>
+                        <p class="card-text">
+                            Kami TradiTour berkomitmen untuk mendukung pertumbuhan ekonomi di Sulawesi Utara dengan strategi
+                            pemasaran yang efektif. Kami membantu Anda untuk menjangkau lebih banyak pelanggan, meningkatkan
+                            penjualan, dan memperkuat kehadiran merek Anda di pasar lokal maupun regional.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 mb-3 mb-sm-0">
+                <div class="card p-3">
+                    <div class="card-body text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="orange"
+                            class="bi bi-shop-window" viewBox="0 0 16 16">
+                            <path
+                                d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.37 2.37 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0M1.5 8.5A.5.5 0 0 1 2 9v6h12V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5m2 .5a.5.5 0 0 1 .5.5V13h8V9.5a.5.5 0 0 1 1 0V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5a.5.5 0 0 1 .5-.5" />
+                        </svg>
+                        <h5 class="card-title mt-2">Ekonomi Kreatif</h5>
+                        <p class="card-text">
+                            Memanfaatkan kreativitas untuk mendorong pertumbuhan ekonomi dan inovasi. Dari produk unik
+                            hingga layanan berbasis budaya, mari bersama mengembangkan potensi ekonomi lokal dengan ide-ide
+                            yang segar dan berani.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container-fluid hero-section position-relative p-0">
@@ -109,9 +225,6 @@
                     menjadi destinasi wisata snorkeling dan diving yang sangat populer. Anda dapat menjelajahi keindahan
                     bawah laut Bunaken dengan menyelam atau snorkeling, dan menyaksikan kehidupan laut yang memukau, seperti
                     ikan karang yang berwarna-warni, penyu, hiu, dan terumbu karang yang menakjubkan</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Discover More</button>
-                </div>
             </div>
             <div class="col-lg-6 hero-img-container p-0">
                 <img src="https://tribratanews.polri.go.id/web/image/blog.post/61435/image" alt="Hero Image"
@@ -134,7 +247,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col">
                 <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
                     style="background-image: url('https://cdn.idntimes.com/content-images/post/20181027/wacanaco-rumah-lamin-623eb95f50eacc00366d3d131d285fc7-10a73338a3f3ac12addb472374765868.jpg');">

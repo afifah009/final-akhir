@@ -84,7 +84,8 @@ Route::post('/forums/{forum}/comments', [CommentController::class, 'store'])->na
 // Admin routes
 
 
-Route::prefix('admin')->group(function () {
+Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.landingpage');
 
     Route::get('user', [AuthController::class, 'user'])->name('user');
 

@@ -8,8 +8,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://cdn.pixabay.com/photo/2024/01/08/15/54/defile-8495836_1280.jpg" class="d-block w-100"
-                    alt="...">
+                <img src="{{ asset('image/pulau.jpg') }}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h1 class="display-4 fst-italic">Contact Us</h1>
                     <p class="lead my-3">Silahkan Memberikan Saran</p>
@@ -42,7 +41,7 @@
                         <button class="btn btn-primary">Send Now</button>
                     </div>
                 </form>
-                @if(session('message'))
+                @if (session('message'))
                     <div class="alert alert-success">{{ session('message') }}</div>
                 @endif
             </div>

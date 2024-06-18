@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="login__button">Update Profile</button>
+            <button type="submit" class="login_update">Update Profile</button>
         </form>
     </div>
 

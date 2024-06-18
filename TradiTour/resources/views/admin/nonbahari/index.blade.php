@@ -9,7 +9,7 @@
                 <span class="icon text-white">
                     <i class="fas fa-plus"></i>
                 </span>
-                <span class="text">Tambah Wisata Bahari Baru</span>
+                <span class="text">Tambah Wisata Non Bahari Baru</span>
             </a>
         </div>
         <div class="card-body">
